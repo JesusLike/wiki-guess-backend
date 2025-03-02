@@ -152,3 +152,21 @@ def serialize_country_info(df):
     Transform DataFrame with country props to JSON with hierarchical groups
     '''
     return df.groupby('Group').apply(lambda x: x.to_dict(orient='records'), include_groups=False).to_json()
+
+def get_all_countries_data():
+    country_list = get_countries()
+    with open('./data/country_list.txt', "w") as f:
+        for country in country_list:
+            f.write(f"{country['name']}, {country['page']}\n")
+    
+    country_infos = []
+    for country in  country_list:
+        try:
+            country_info = get_country_info(country["page"])
+        except:
+            print(f"Page {country['page']} doesn't contain the data table.")
+        else:
+            country_info.insert(0, 'Country', country["name"])
+            country_infos.append(country_info)
+            
+    pandas.concat(country_infos, ignore_index=True).to_csv('./data/countries_data.csv')
