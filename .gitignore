@@ -164,3 +164,7 @@ cython_debug/
 
 # linter rc
 src/.pylintrc
+
+# test data
+test_output/
+test_data/

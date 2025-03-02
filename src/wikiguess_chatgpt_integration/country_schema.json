@@ -1,0 +1,85 @@
+{
+    "type": "object",
+    "description": "Schema for actual data about countries. Decimal separator - dot symbol '.', thousands separator is not used. In descriptions to all fields there is an example of what the value will look like in JSON for Canada.",
+    "properties": {
+      "countryName": {
+        "description": "Name of the country. Example: 'Canada'",
+        "type": "string"
+      },
+      "capital" : {
+        "description": "Name of the capital city de jure (can be None if there are no capital). Example: 'Ottawa'",
+        "type": "string"
+      },
+      "area_total": {
+        "description": "The area of the country in square kilometers (includes units of measure). Example: '9984670 sq. km'",
+        "type": "string"
+      },
+      "area_rank": {
+        "description": "Country's rank in the world by it's area. Example: 2",
+        "type": "integer"
+      },
+      "gdp_total": {
+        "description": "Country's nominal GDP in USD (includes units of measure in the answer). Example: '2.14 trillion USD'",
+        "type": "string"
+      },
+      "gdp_total_rank": {
+        "description": "Country's rank in the world by it's total nominal GDP. Example: 9",
+        "type": "integer"
+      },
+      "gdp_per_capita": {
+        "description": "Country's nominal GDP per capita in USD (includes units of measure in the answer). Example: '53371 USD'",
+        "type": "string"
+      },
+      "gdp_per_capita_rank": {
+        "description": "Country's rank in the world by it's nominal GDP per capita. Example: 20",
+        "type": "integer"
+      },
+      "population_total": {
+        "description": "Country's population amount (includes units of measure in the answer). Example: '41465298 people'",
+        "type": "string"
+      },
+      "population_rank": {
+        "description": "Country's rank in the world by population. Example: 37",
+        "type": "integer"
+      },
+      "population_density": {
+        "description": "Country's population density in people by square kilometer (includes units of measure in the answer). Example: '4.35 people per sq. km'",
+        "type": "string"
+      },
+      "population_density_rank": {
+        "description": "Country's rank in the world by it's population density. Example: 186",
+        "type": "integer"
+      },
+      "established": {
+        "description": "Year of establishment or independence (the most recent if there were few). Example: 1867",
+        "type": "integer"
+      },
+      "former_owner": {
+        "description": "Previous colonial power or powers if there were any (None otherwise). Example: 'United Kingdom'",
+        "type": "string"
+      },
+      "government": {
+        "description": "Country's government type. Example: 'Parliamentary Democracy'",
+        "type": "string"
+      },
+      "religion": {
+        "description": "Country's official religion (can be None if there are no official religion). Example: 'None'",
+        "type": "string"
+      },
+      "currency": {
+        "description": "Country's official currency code. Example: 'CAD'",
+        "type": "string"
+      },
+      "languages": {
+        "description": "Country's official language or languages. Example: ['English', 'French']",
+        "type": "array",
+        "items": {
+          "type": "string" 
+        }
+      }
+    },
+    "additionalProperties": false,
+    "required": ["countryName", "capital", "area_total", "area_rank", "gdp_total", "gdp_total_rank", "gdp_per_capita", "gdp_per_capita_rank", "population_total", "population_rank", "population_density", "population_density_rank", "established", "former_owner", "government", "religion", "currency", "languages"]
+  }
+  
+  
